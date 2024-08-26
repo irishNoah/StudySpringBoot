@@ -97,3 +97,134 @@
 2024-08-26T10:25:44.877+09:00  INFO 338901 --- [StudySpringBoot] [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-08-26T10:25:44.878+09:00  INFO 338901 --- [StudySpringBoot] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
 2024-08-26T10:25:44.883+09:00  INFO 338901 --- [StudySpringBoot] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-08-26T11:09:37.524+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] c.e.S.StudySpringBootApplication         : Starting StudySpringBootApplication using Java 17.0.12 with PID 341534 (/home/pcy/project/StudySpringBoot/target/classes started by pcy in /home/pcy/project/StudySpringBoot)
+2024-08-26T11:09:37.526+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] c.e.S.StudySpringBootApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-26T11:09:37.573+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-26T11:09:37.573+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-26T11:09:38.260+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-26T11:09:38.329+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 3 JPA repository interfaces.
+2024-08-26T11:09:39.196+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8070 (http)
+2024-08-26T11:09:39.209+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-26T11:09:39.209+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-26T11:09:39.251+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-26T11:09:39.251+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1677 ms
+2024-08-26T11:09:39.477+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-26T11:09:39.528+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-26T11:09:39.559+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-26T11:09:39.831+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-26T11:09:39.858+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-26T11:09:40.144+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7fce2e2a
+2024-08-26T11:09:40.146+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-26T11:09:40.972+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-26T11:09:41.016+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-26T11:09:41.947+09:00  WARN 341534 --- [StudySpringBoot] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-26T11:09:42.816+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-26T11:09:42.853+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8070 (http) with context path '/'
+2024-08-26T11:09:42.864+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] c.e.S.StudySpringBootApplication         : Started StudySpringBootApplication in 5.717 seconds (process running for 6.335)
+2024-08-26T11:10:23.345+09:00  INFO 341534 --- [StudySpringBoot] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-26T11:10:23.367+09:00  INFO 341534 --- [StudySpringBoot] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-26T11:10:23.374+09:00  INFO 341534 --- [StudySpringBoot] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-26T11:10:23.386+09:00  INFO 341534 --- [StudySpringBoot] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-26T11:10:23.463+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] c.e.S.StudySpringBootApplication         : Starting StudySpringBootApplication using Java 17.0.12 with PID 341534 (/home/pcy/project/StudySpringBoot/target/classes started by pcy in /home/pcy/project/StudySpringBoot)
+2024-08-26T11:10:23.464+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] c.e.S.StudySpringBootApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-26T11:10:23.631+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-26T11:10:23.642+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 3 JPA repository interfaces.
+2024-08-26T11:10:23.908+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8070 (http)
+2024-08-26T11:10:23.909+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-26T11:10:23.909+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-26T11:10:23.919+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-26T11:10:23.920+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 454 ms
+2024-08-26T11:10:24.045+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-26T11:10:24.048+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-26T11:10:24.062+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-26T11:10:24.063+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-08-26T11:10:24.078+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44d60587
+2024-08-26T11:10:24.078+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-08-26T11:10:24.152+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-26T11:10:24.164+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-26T11:10:24.963+09:00  WARN 341534 --- [StudySpringBoot] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-26T11:10:25.650+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-26T11:10:25.668+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8070 (http) with context path '/'
+2024-08-26T11:10:25.675+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] c.e.S.StudySpringBootApplication         : Started StudySpringBootApplication in 2.237 seconds (process running for 49.146)
+2024-08-26T11:10:25.678+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-26T11:10:34.760+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-26T11:10:34.760+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-26T11:10:34.762+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-26T11:10:34.803+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] c.e.S.aspect.LoggingAspect               : LoggingAspect - Executing method: getPlayers
+2024-08-26T11:10:34.804+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] c.e.S.controller.PlayerController        : GET request Player from IP: 192.168.1.106
+2024-08-26T11:10:34.951+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] c.e.S.aspect.LoggingAspect               : LoggingAspect - Method executed: getPlayers, Result: [com.example.StudySpringBoot.entity.Player@6681a950, com.example.StudySpringBoot.entity.Player@2d4bbf6, com.example.StudySpringBoot.entity.Player@4d3f8b28, com.example.StudySpringBoot.entity.Player@246f22ba, com.example.StudySpringBoot.entity.Player@78a1ed03, com.example.StudySpringBoot.entity.Player@5f0df2ea, com.example.StudySpringBoot.entity.Player@6e5a54e8, com.example.StudySpringBoot.entity.Player@337dd16b, com.example.StudySpringBoot.entity.Player@4443ebf2, com.example.StudySpringBoot.entity.Player@74e9cb32, com.example.StudySpringBoot.entity.Player@48a83c53, com.example.StudySpringBoot.entity.Player@15834aa4]
+2024-08-26T11:11:13.995+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-2] c.e.S.aspect.LoggingAspect               : LoggingAspect - Executing method: addPlayers
+2024-08-26T11:11:13.995+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-2] c.e.S.controller.PlayerController        : POST request Player from IP: 192.168.1.106, with data: com.example.StudySpringBoot.entity.Player@60ba38b0
+2024-08-26T11:11:14.037+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-2] c.e.S.aspect.LoggingAspect               : LoggingAspect - Method executed: addPlayers, Result: com.example.StudySpringBoot.entity.Player@60ba38b0
+2024-08-26T11:16:04.049+09:00  INFO 341534 --- [StudySpringBoot] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-26T11:16:04.054+09:00  INFO 341534 --- [StudySpringBoot] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-26T11:16:04.055+09:00  INFO 341534 --- [StudySpringBoot] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-08-26T11:16:04.061+09:00  INFO 341534 --- [StudySpringBoot] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-08-26T11:16:04.144+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] c.e.S.StudySpringBootApplication         : Starting StudySpringBootApplication using Java 17.0.12 with PID 341534 (/home/pcy/project/StudySpringBoot/target/classes started by pcy in /home/pcy/project/StudySpringBoot)
+2024-08-26T11:16:04.144+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] c.e.S.StudySpringBootApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-26T11:16:04.301+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-26T11:16:04.311+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 3 JPA repository interfaces.
+2024-08-26T11:16:04.537+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8070 (http)
+2024-08-26T11:16:04.538+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-26T11:16:04.538+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-26T11:16:04.548+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-26T11:16:04.548+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 402 ms
+2024-08-26T11:16:04.640+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-26T11:16:04.642+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-26T11:16:04.648+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-26T11:16:04.649+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-08-26T11:16:04.661+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3b3566a6
+2024-08-26T11:16:04.662+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-08-26T11:16:04.720+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-26T11:16:04.730+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-26T11:16:05.455+09:00  WARN 341534 --- [StudySpringBoot] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-26T11:16:06.141+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-26T11:16:06.158+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8070 (http) with context path '/'
+2024-08-26T11:16:06.165+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] c.e.S.StudySpringBootApplication         : Started StudySpringBootApplication in 2.046 seconds (process running for 389.636)
+2024-08-26T11:16:06.167+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-26T11:16:28.722+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-26T11:16:28.722+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-26T11:16:28.723+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-26T11:16:28.734+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] c.e.S.aspect.LoggingAspect               : LoggingAspect - Executing method: addPlayers
+2024-08-26T11:16:28.734+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] c.e.StudySpringBoot.aspect.TimeTraceAop  : TimeTraceAop - START: execution(Player com.example.StudySpringBoot.controller.PlayerController.addPlayers(Player,HttpServletRequest))
+2024-08-26T11:16:28.735+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] c.e.S.controller.PlayerController        : POST request Player from IP: 192.168.1.106, with data: com.example.StudySpringBoot.entity.Player@45c5e43a
+2024-08-26T11:16:28.748+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] c.e.StudySpringBoot.aspect.TimeTraceAop  : TimeTraceAop - END: execution(Player com.example.StudySpringBoot.controller.PlayerController.addPlayers(Player,HttpServletRequest)) 14ms
+2024-08-26T11:16:28.749+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] c.e.S.aspect.LoggingAspect               : LoggingAspect - Method executed: addPlayers, Result: com.example.StudySpringBoot.entity.Player@45c5e43a
+2024-08-26T11:20:54.364+09:00  INFO 341534 --- [StudySpringBoot] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-26T11:20:54.374+09:00  INFO 341534 --- [StudySpringBoot] [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-26T11:20:54.376+09:00  INFO 341534 --- [StudySpringBoot] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-08-26T11:20:54.385+09:00  INFO 341534 --- [StudySpringBoot] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-08-26T11:20:54.469+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] c.e.S.StudySpringBootApplication         : Starting StudySpringBootApplication using Java 17.0.12 with PID 341534 (/home/pcy/project/StudySpringBoot/target/classes started by pcy in /home/pcy/project/StudySpringBoot)
+2024-08-26T11:20:54.469+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] c.e.S.StudySpringBootApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-26T11:20:54.622+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-26T11:20:54.631+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
+2024-08-26T11:20:54.900+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8070 (http)
+2024-08-26T11:20:54.901+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-26T11:20:54.902+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-26T11:20:54.910+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-26T11:20:54.910+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 439 ms
+2024-08-26T11:20:55.035+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-26T11:20:55.037+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-26T11:20:55.045+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-26T11:20:55.046+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-08-26T11:20:55.060+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@495bdfb8
+2024-08-26T11:20:55.060+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-08-26T11:20:55.121+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-26T11:20:55.131+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-26T11:20:55.882+09:00  WARN 341534 --- [StudySpringBoot] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-26T11:20:56.461+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-26T11:20:56.475+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8070 (http) with context path '/'
+2024-08-26T11:20:56.480+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] c.e.S.StudySpringBootApplication         : Started StudySpringBootApplication in 2.034 seconds (process running for 679.951)
+2024-08-26T11:20:56.481+09:00  INFO 341534 --- [StudySpringBoot] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-26T11:21:18.371+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-26T11:21:18.371+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-26T11:21:18.372+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-26T11:21:18.382+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] c.e.S.aspect.LoggingAspect               : LoggingAspect - Executing method: addPlayers
+2024-08-26T11:21:18.382+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] c.e.StudySpringBoot.aspect.TimeTraceAop  : TimeTraceAop - START: execution(Player com.example.StudySpringBoot.controller.PlayerController.addPlayers(Player,HttpServletRequest))
+2024-08-26T11:21:18.383+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] c.e.S.controller.PlayerController        : POST request Player from IP: 192.168.1.106, with data: com.example.StudySpringBoot.entity.Player@6fc82208
+2024-08-26T11:21:18.394+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] c.e.StudySpringBoot.aspect.TimeTraceAop  : TimeTraceAop - END: execution(Player com.example.StudySpringBoot.controller.PlayerController.addPlayers(Player,HttpServletRequest)) 12ms
+2024-08-26T11:21:18.395+09:00  INFO 341534 --- [StudySpringBoot] [http-nio-0.0.0.0-8070-exec-1] c.e.S.aspect.LoggingAspect               : LoggingAspect - Method executed: addPlayers, Result: com.example.StudySpringBoot.entity.Player@6fc82208
+2024-08-26T11:25:22.600+09:00  INFO 341534 --- [StudySpringBoot] [RMI TCP Connection(19)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-08-26T11:25:22.604+09:00  INFO 341534 --- [StudySpringBoot] [RMI TCP Connection(19)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-26T11:25:22.604+09:00  INFO 341534 --- [StudySpringBoot] [RMI TCP Connection(19)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2024-08-26T11:25:22.608+09:00  INFO 341534 --- [StudySpringBoot] [RMI TCP Connection(19)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.

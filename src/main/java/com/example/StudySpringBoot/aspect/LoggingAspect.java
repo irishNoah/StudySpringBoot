@@ -15,17 +15,17 @@ public class LoggingAspect {
 
     private static final Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 
-    @Before("execution(* com.example.StudySpringBoot.controller.PlayerController.*(..))")
+    @Before("execution(* com.example.StudySpringBoot.controller.*.*(..))")
     public void logBeforeMethod(JoinPoint joinPoint) {
         logger.info("LoggingAspect - Executing method: " + joinPoint.getSignature().getName());
     }
 
-    @AfterReturning(value = "execution(* com.example.StudySpringBoot.controller.PlayerController.*(..))", returning = "result")
+    @AfterReturning(value = "execution(* com.example.StudySpringBoot.controller.*.*(..))", returning = "result")
     public void logAfterMethod(JoinPoint joinPoint, Object result) {
         logger.info("LoggingAspect - Method executed: " + joinPoint.getSignature().getName() + ", Result: " + result);
     }
 
-    @AfterThrowing(value = "execution(* com.example.StudySpringBoot.controller.PlayerController.*(..))", throwing = "exception")
+    @AfterThrowing(value = "execution(* com.example.StudySpringBoot.controller.*.*(..))", throwing = "exception")
     public void logAfterThrowing(JoinPoint joinPoint, Exception exception) {
         logger.error("LoggingAspect - Exception in method: " + joinPoint.getSignature().getName() + ", Exception: " + exception.getMessage());
     }
