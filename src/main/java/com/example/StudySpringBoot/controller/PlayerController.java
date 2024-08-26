@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.StudySpringBoot.entity.Player;
 import com.example.StudySpringBoot.repository.PlayerRepository;
 
+import jakarta.annotation.PostConstruct;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 
@@ -24,10 +25,38 @@ public class PlayerController {
 
     private static final Logger logger = LoggerFactory.getLogger(PlayerController.class);
 
+    @PostConstruct
+    public void init() {
+    	logger.info("PlayerController - playerRepository is injected with Proxy: " +
+                (playerRepository.getClass().getName().contains("$$") || 
+                 playerRepository.getClass().getName().startsWith("jdk.proxy")));
+        System.out.println("PlayerController - playerRepository is injected with Proxy: " +
+                (playerRepository.getClass().getName().contains("$$") || 
+                        playerRepository.getClass().getName().startsWith("jdk.proxy")));
+        logger.info("PlayerController - Actual class of playerRepository: " + 
+                playerRepository.getClass().getName());
+        System.out.println("PlayerController - Actual class of playerRepository: " + 
+                playerRepository.getClass().getName());
+    }
+    
+    private void logProxyInfo() { 
+        boolean isProxy = playerRepository.getClass().getName().contains("$$") || 
+                          playerRepository.getClass().getName().startsWith("jdk.proxy");
+
+        logger.info("PlayerController - playerRepository is a Proxy: " + isProxy);
+        System.out.println("PlayerController - playerRepository is a Proxy: " + isProxy);
+
+        logger.info("PlayerController - Actual class of playerRepository: " + 
+                    playerRepository.getClass().getName());
+        System.out.println("PlayerController - Actual class of playerRepository: " + 
+                    playerRepository.getClass().getName());
+    }
+    
     @GetMapping
     public List<Player> getPlayers(HttpServletRequest request) {
         String clientIp = request.getRemoteAddr();
         logger.info("GET request Player from IP: " + clientIp);
+        logProxyInfo();  // 프록시 여부 로그 기록
         return playerRepository.findAll();
     }
 
@@ -35,6 +64,7 @@ public class PlayerController {
     public Player addPlayers(@Valid @RequestBody Player players, HttpServletRequest request) {
         String clientIp = request.getRemoteAddr();
         logger.info("POST request Player from IP: " + clientIp + ", with data: " + players.toString());
+        logProxyInfo();  // 프록시 여부 로그 기록
         return playerRepository.save(players);
     }
 
@@ -42,7 +72,8 @@ public class PlayerController {
     public ResponseEntity<Player> updatePlayer(@PathVariable String playerId, @Valid @RequestBody Player playerDetails, HttpServletRequest request) {
         String clientIp = request.getRemoteAddr();
         logger.info("PUT request Player from IP: " + clientIp + ", to update Player with ID: " + playerId + ", with data: " + playerDetails.toString());
-
+        logProxyInfo();  // 프록시 여부 로그 기록
+        
         Optional<Player> optionalPlayer = playerRepository.findById(playerId);
 
         if (optionalPlayer.isPresent()) {
@@ -64,7 +95,8 @@ public class PlayerController {
     public ResponseEntity<Player> deletePlayer(@PathVariable String playerId, HttpServletRequest request) {
         String clientIp = request.getRemoteAddr();
         logger.info("DELETE request Player from IP: " + clientIp + ", to delete Player with ID: " + playerId);
-
+        logProxyInfo();  // 프록시 여부 로그 기록
+        
         Optional<Player> optionalPlayer = playerRepository.findById(playerId);
 
         if (optionalPlayer.isPresent()) {
