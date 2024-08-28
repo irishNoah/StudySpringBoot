@@ -1,5 +1,7 @@
 package com.example.StudySpringBoot.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Access;
 import jakarta.persistence.AccessType;
 import jakarta.persistence.Entity;
