@@ -54,4 +54,32 @@ public class BookController {
         bookService.deleteBook(id);
         return ResponseEntity.noContent().build();
     }
+    
+    // ------------------------------------------------------------------------------------------
+    
+    @PostMapping("/test-transient")
+    public void testtransientStateExample() {
+        bookService.transientStateExample();
+    }
+    
+    @PostMapping("/test-persistent")
+    public void testpersistentStateExample() {
+        bookService.persistentStateExample();
+    }
+    
+    @PostMapping("/test-detached")
+    public void testdetachedStateExample() {
+        bookService.detachedStateExample();
+    }
+    
+    @PostMapping("/test-transitionToPersistent")
+    public void testtransitionToPersistentFromTransient() {
+        bookService.transitionToPersistentFromTransient();
+    }
+    
+    @PostMapping("/test-removed")
+    public void testremovedStateExample() {
+        bookService.removedStateExample();
+    }
+    
 }
