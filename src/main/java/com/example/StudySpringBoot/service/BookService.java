@@ -18,83 +18,34 @@ public class BookService {
 
     @Transactional
     public Book saveBook(Book book) {
+    	// Book 객체를 영속성 컨텍스트에 저장 (영속 상태)
     	em.persist(book);
         return book;
     }
 
     public Book findBookById(Long id) {
+    	// ID로 Book 객체를 데이터베이스에서 조회 (영속 상태)
         return em.find(Book.class, id);
     }
 
     public List<Book> findAllBooks() {
+    	// 모든 Book 객체를 조회
         return em.createQuery("SELECT b FROM Book b", Book.class).getResultList();
     }
 
     @Transactional
     public Book updateBook(Book book) {
+    	// Book 객체를 업데이트 (영속 상태로 전환)
     	return em.merge(book);
     }
 
     @Transactional
     public void deleteBook(Long id) {
+    	// ID로 Book 객체를 조회한 후 삭제 (삭제 상태로 전환)
     	Book book = em.find(Book.class, id);
         if (book != null) {
             em.remove(book);
         }
-    }
-    
-    // ----------------------------------------------------------------------------
-    
-    // 영속성 상태를 연습하기 위한 새로운 메서드들
-    public void transientStateExample() {
-    	// 이 book 객체는 현재 '일시적 상태'에 있습니다.
-    	System.out.println("Start - transientStateExample 비영속");
-        Book book = new Book();
-        book.setTitle("Transient Book");
-        book.setAuthor("Author A");
-        System.out.println("End - transientStateExample 비영속");
-    }
-
-    @Transactional
-    public void persistentStateExample() {
-    	System.out.println("Start - persistentStateExample 비영속 to 영속");
-        Book book = new Book();
-        book.setTitle("Persistent Book");
-        book.setAuthor("Author B");
-        em.persist(book); // 이 book 객체는 이제 '영속 상태'가 됩니다.
-        System.out.println("End - persistentStateExample 비영속 to 영속");
-    }
-
-    @Transactional
-    public void detachedStateExample() {
-    	System.out.println("Start - detachedStateExample 영속 to 준영속");
-        Book book = new Book();
-        book.setTitle("Detached Book");
-        book.setAuthor("Author C");
-        em.persist(book); // 이 book 객체는 '영속 상태'가 됩니다.
-        em.detach(book);  // 이 book 객체는 이제 '준영속 상태'가 됩니다.
-        System.out.println("End - detachedStateExample 영속 to 준영속");
-    }
-
-    @Transactional
-    public void transitionToPersistentFromTransient() {
-    	System.out.println("Start - transitionToPersistentFromTransient 준영속 to 영속");
-        Book book = new Book();
-        book.setTitle("New Persistent Book");
-        book.setAuthor("Author D");
-        em.persist(book); // 이 book 객체는 '일시적 상태'에서 '영속 상태'로 전환됩니다.
-        System.out.println("End - transitionToPersistentFromTransient 준영속 to 영속");
-    }
-
-    @Transactional
-    public void removedStateExample() {
-    	System.out.println("Start - removedStateExample 영속 to 삭제");
-        Book book = new Book();
-        book.setTitle("Removed Book");
-        book.setAuthor("Author E");
-        em.persist(book); // 이 book 객체는 '영속 상태'가 됩니다.
-        em.remove(book);  // 이 book 객체는 이제 '제거된 상태'가 됩니다.
-        System.out.println("End - removedStateExample 영속 to 삭제");
     }
 
 }

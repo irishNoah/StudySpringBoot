@@ -18,11 +18,13 @@ public class BookController {
 
     @GetMapping
     public List<Book> getAllBooks() {
+    	// 모든 Book 객체를 반환
         return bookService.findAllBooks();
     }
     
     @GetMapping("/{id}")
     public ResponseEntity<Book> getBookById(@PathVariable Long id) {
+    	// ID로 Book 객체를 조회하여 반환
         Book book = bookService.findBookById(id);
         if (book != null) {
             return ResponseEntity.ok(book);
@@ -33,12 +35,14 @@ public class BookController {
     
     @PostMapping
     public Book createBook(@RequestBody Book book) {
+    	// 새로운 Book 객체를 생성하여 저장 (영속성 컨텍스트에 추가)
         return bookService.saveBook(book);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book bookDetails) {
-        Book book = bookService.findBookById(id);
+    	// 기존의 Book 객체를 ID로 조회한 후 업데이트
+    	Book book = bookService.findBookById(id);
         if (book != null) {
             book.setTitle(bookDetails.getTitle());
             book.setAuthor(bookDetails.getAuthor());
@@ -51,35 +55,9 @@ public class BookController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
+    	// ID로 Book 객체를 조회한 후 삭제
         bookService.deleteBook(id);
         return ResponseEntity.noContent().build();
-    }
-    
-    // ------------------------------------------------------------------------------------------
-    
-    @PostMapping("/test-transient")
-    public void testtransientStateExample() {
-        bookService.transientStateExample();
-    }
-    
-    @PostMapping("/test-persistent")
-    public void testpersistentStateExample() {
-        bookService.persistentStateExample();
-    }
-    
-    @PostMapping("/test-detached")
-    public void testdetachedStateExample() {
-        bookService.detachedStateExample();
-    }
-    
-    @PostMapping("/test-transitionToPersistent")
-    public void testtransitionToPersistentFromTransient() {
-        bookService.transitionToPersistentFromTransient();
-    }
-    
-    @PostMapping("/test-removed")
-    public void testremovedStateExample() {
-        bookService.removedStateExample();
     }
     
 }
