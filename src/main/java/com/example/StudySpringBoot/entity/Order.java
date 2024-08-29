@@ -1,6 +1,7 @@
 package com.example.StudySpringBoot.entity;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.util.*;
 
 import jakarta.persistence.*;
 
@@ -12,26 +13,59 @@ import jakarta.persistence.*;
 	Order 클래스에 대해 @Table(name = "ORDERS") 로 처리하는 게 좋다.
  */
 @Entity
-@Table(name = "Orders")
+@Table(name = "ORDERS")
 public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ORDER_ID") // 테이블 설계 참고
 	private Long id;
 	
-	/*
-	    아래와 같이 다른 테이블의 키를 그대로 가져오는 것은 객체 설계를
-	    테이블 설계와 맞춘 것이다. 이러한 점은 객체 지향적이지 않다.
-	    그렇다면... 객체 지향적으로 짜려면 어떻게 해야 할까?
+	@ManyToOne @JoinColumn(name = "MEMBER_ID")
+	private Member member;
 	
-	    // private Member member; 와 같이 짜서, 이 멤버를 통해 값을 가져와야 한다.
-	    그 방식은 연관관계 매핑에서 배워보도록 하자!
-    */
-	@Column(name = "MEMBER_ID") // 테이블 설계 참고
-	private Long memberId;
-	private Date orderDate;
+	@OneToOne @JoinColumn(name = "DELIVERY_ID")
+	private Delivery delivery;
+	
+	@OneToMany(mappedBy = "order")
+	private List<OrderItem> orderItems = new ArrayList<>();
+	
+	public void addOrderItem(OrderItem orderItem) {
+		orderItems.add(orderItem);
+		orderItem.setOrder(this);
+	}
+	
+	private LocalDateTime orderDate;
 	@Enumerated(EnumType.STRING)
 	private OrderStatus status;
+	
+	public Member getMember() {
+		return member;
+	}
+
+
+	public void setMember(Member member) {
+		this.member = member;
+	}
+
+
+	public Delivery getDelivery() {
+		return delivery;
+	}
+
+
+	public void setDelivery(Delivery delivery) {
+		this.delivery = delivery;
+	}
+
+
+	public List<OrderItem> getOrderItems() {
+		return orderItems;
+	}
+
+
+	public void setOrderItems(List<OrderItem> orderItems) {
+		this.orderItems = orderItems;
+	}
 	
 	
 	public Order() {}
@@ -47,24 +81,6 @@ public class Order {
 	}
 
 
-	public Long getMemberId() {
-		return memberId;
-	}
-
-
-	public void setMemberId(Long memberId) {
-		this.memberId = memberId;
-	}
-
-
-	public Date getOrderDate() {
-		return orderDate;
-	}
-
-
-	public void setOrderDate(Date orderDate) {
-		this.orderDate = orderDate;
-	}
 
 
 	public OrderStatus getStatus() {
@@ -74,6 +90,16 @@ public class Order {
 
 	public void setStatus(OrderStatus status) {
 		this.status = status;
+	}
+
+
+	public LocalDateTime getOrderDate() {
+		return orderDate;
+	}
+
+
+	public void setOrderDate(LocalDateTime orderDate) {
+		this.orderDate = orderDate;
 	}
 	
 	
