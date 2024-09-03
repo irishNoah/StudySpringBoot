@@ -11,6 +11,7 @@ import com.example.StudySpringBoot.entity.Player;
 import com.example.StudySpringBoot.entity.Team;
 import com.example.StudySpringBoot.repository.PlayerRepository;
 import com.example.StudySpringBoot.repository.TeamRepository;
+import com.example.StudySpringBoot.service.TeamService;
 
 import jakarta.transaction.Transactional;
 
@@ -23,6 +24,9 @@ public class StudySpringBootApplication implements CommandLineRunner {
     @Autowired
     private PlayerRepository playerRepository;
 
+    @Autowired
+    private TeamService teamService;
+    
     public static void main(String[] args) {
         SpringApplication.run(StudySpringBootApplication.class, args);
     }
@@ -33,33 +37,26 @@ public class StudySpringBootApplication implements CommandLineRunner {
     	// 초기 데이터 생성
         System.out.println("=== Initializing Data ===");
         Team team = new Team();
-        team.setName("Apple FC");
+        team.setName("Chelsea FC");
 
         Player player1 = new Player();
-        player1.setName("하하");
+        player1.setName("Drogba");
         player1.setTeam(team);
 
         Player player2 = new Player();
-        player2.setName("길성준");
+        player2.setName("Chech");
         player2.setTeam(team);
 
         team.setPlayers(Arrays.asList(player1, player2));
 
         teamRepository.save(team);
-        playerRepository.save(player1);
-        playerRepository.save(player2);
+
         System.out.println("=== Data initialization complete ===");
-        
-        // Team 로드
-        System.out.println("=== Fetching Team ===");
-        Team loadedTeam = teamRepository.findById(team.getId())
-                .orElseThrow(() -> new RuntimeException("Team not found"));
-        System.out.println("Category fetched: " + loadedTeam);
 
-        // Lazy Loading 발생 시점 확인
-        System.out.println("=== Accessing Players (Lazy Loading) ===");
-        System.out.println("Players in Team: " + loadedTeam.getPlayers());
+        // 특정 ID의 팀 삭제 (ID를 적절히 설정)
+        Long teamIdToDelete = team.getId();
+        teamService.deleteTeamById(teamIdToDelete);
 
-        System.out.println("=== Lazy Loading Complete ===");
+        System.out.println("=== Team and its Players deleted ===");
     }
 }

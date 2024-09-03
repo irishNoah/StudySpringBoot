@@ -22,4 +22,9 @@ public class TeamController {
 		
 		return team;
 	}
+	
+	@DeleteMapping("/team/{id}")
+    public void deleteTeam(@PathVariable Long id) {
+        teamService.deleteTeamById(id);
+    }
 }

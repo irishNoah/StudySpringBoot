@@ -22,4 +22,9 @@ public class TeamService {
     	Hibernate.initialize(team.getPlayers()); // 명시적 초기화
         return team;
     }
+    
+    @Transactional
+    public void deleteTeamById(Long teamId) {
+        teamRepository.deleteById(teamId);
+    }
 }

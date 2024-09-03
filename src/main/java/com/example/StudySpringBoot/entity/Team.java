@@ -8,7 +8,7 @@ public class Team {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	@OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
 	private List<Player> players;
 	public Long getId() {
 		return id;
