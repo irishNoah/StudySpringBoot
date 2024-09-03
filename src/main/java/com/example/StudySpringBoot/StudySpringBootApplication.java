@@ -1,50 +1,65 @@
 package com.example.StudySpringBoot;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.StudySpringBoot.entity.Thing;
+import com.example.StudySpringBoot.entity.Player;
+import com.example.StudySpringBoot.entity.Team;
+import com.example.StudySpringBoot.repository.PlayerRepository;
+import com.example.StudySpringBoot.repository.TeamRepository;
 
-import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 
 @SpringBootApplication
 public class StudySpringBootApplication implements CommandLineRunner {
 
+	@Autowired
+    private TeamRepository teamRepository;
+
     @Autowired
-    private EntityManager em;
+    private PlayerRepository playerRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(StudySpringBootApplication.class, args);
     }
 
     @Override
-    @Transactional // Spring이 트랜잭션을 관리하도록 설정
+    @Transactional
     public void run(String... args) throws Exception {
-    	/* 
-		EntityManager를 직접 사용하여 트랜잭션을 관리하는 대신, @Transactional 어노테이션을 사용하여 트랜잭션을 관리해야 합니다. 
-		그러나 EntityManager를 이용한 트랜잭션 시작 시도는 제거해야 합니다.
-    	 */
-        // em.getTransaction().begin();
+    	// 초기 데이터 생성
+        System.out.println("=== Initializing Data ===");
+        Team team = new Team();
+        team.setName("Apple FC");
 
-        // find() 사용
-        Thing thingFind = em.find(Thing.class, 1L);
-        System.out.println("find()로 조회한 cook: " + thingFind.getName());
+        Player player1 = new Player();
+        player1.setName("하하");
+        player1.setTeam(team);
 
-        // getReference() 사용
-        Thing thingReference = em.getReference(Thing.class, 2L);
-        System.out.println("getReference()로 조회한 cook: " + thingReference.getClass().getName()); // Proxy 객체 확인
+        Player player2 = new Player();
+        player2.setName("길성준");
+        player2.setTeam(team);
 
-        // 프록시 객체에 접근
-        System.out.println("프록시 객체 접근하여 name 조회: " + thingReference.getName()); // 이 시점에서 DB 쿼리 실행
+        team.setPlayers(Arrays.asList(player1, player2));
 
+        teamRepository.save(team);
+        playerRepository.save(player1);
+        playerRepository.save(player2);
+        System.out.println("=== Data initialization complete ===");
         
-        /* 
-		EntityManager를 직접 사용하여 트랜잭션을 관리하는 대신, @Transactional 어노테이션을 사용하여 트랜잭션을 관리해야 합니다. 
-		Spring이 자동으로 트랜잭션을 관리하므로, 명시적으로 커밋할 필요가 없습니다.
-    	 */
-        // em.getTransaction().commit();
+        // Team 로드
+        System.out.println("=== Fetching Team ===");
+        Team loadedTeam = teamRepository.findById(team.getId())
+                .orElseThrow(() -> new RuntimeException("Team not found"));
+        System.out.println("Category fetched: " + loadedTeam);
+
+        // Lazy Loading 발생 시점 확인
+        System.out.println("=== Accessing Players (Lazy Loading) ===");
+        System.out.println("Players in Team: " + loadedTeam.getPlayers());
+
+        System.out.println("=== Lazy Loading Complete ===");
     }
 }
