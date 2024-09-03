@@ -4,8 +4,7 @@ import java.util.*;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "CATEGORY")
-public class Category {
+public class Category extends BaseEntity {
 	@Id
     @GeneratedValue
     private Long id;

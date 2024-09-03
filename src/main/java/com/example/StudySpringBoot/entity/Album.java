@@ -3,11 +3,10 @@ package com.example.StudySpringBoot.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "ALBUM")
-@DiscriminatorValue("A")
 @PrimaryKeyJoinColumn(name = "ALBUM_ID")
 public class Album extends Thing {
 	private String artist;
+	private String etc;
 
 	public String getArtist() {
 		return artist;
@@ -16,5 +15,14 @@ public class Album extends Thing {
 	public void setArtist(String artist) {
 		this.artist = artist;
 	}
+
+	public String getEtc() {
+		return etc;
+	}
+
+	public void setEtc(String etc) {
+		this.etc = etc;
+	}
+	
 	
 }

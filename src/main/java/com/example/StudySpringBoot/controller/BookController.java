@@ -45,7 +45,6 @@ public class BookController {
     	Book book = bookService.findBookById(id);
         if (book != null) {
             book.setTitle(bookDetails.getTitle());
-            book.setAuthor(bookDetails.getAuthor());
             Book updatedBook = bookService.updateBook(book);
             return ResponseEntity.ok(updatedBook);
         } else {

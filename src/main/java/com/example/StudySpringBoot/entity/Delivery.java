@@ -3,8 +3,7 @@ package com.example.StudySpringBoot.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "DELIVERY")
-public class Delivery {
+public class Delivery extends BaseEntity {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "DELIVERY_ID")
 	private Long id;
