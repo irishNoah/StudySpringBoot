@@ -2,6 +2,8 @@ package com.example.StudySpringBoot.entity;
 
 import java.util.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -12,12 +14,19 @@ public class Member extends BaseEntity {
 	private Long id;
 	@Column(length = 50)
 	private String name;
-	private String city;
-	private String street;
-	private String zipcode;
 	
-	@OneToMany(mappedBy = "member")
+	@Embedded
+	private Address address;
+	
+	/* 참조를 사용하도록 변경 */
+	@OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<Order> orders = new ArrayList<>();
+	
+	public void addOrder(Order order) {
+		orders.add(order);
+		order.setMember(this);
+	}
 	
 	public List<Order> getOrders() {
 		return orders;
@@ -45,29 +54,12 @@ public class Member extends BaseEntity {
 		this.name = name;
 	}
 
-	public String getCity() {
-		return city;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
-	public String getStreet() {
-		return street;
-	}
-
-	public void setStreet(String street) {
-		this.street = street;
-	}
-
-	public String getZipcode() {
-		return zipcode;
-	}
-
-	public void setZipcode(String zipcode) {
-		this.zipcode = zipcode;
-	}
-	
-	
 }
