@@ -22,7 +22,7 @@ public class BookService {
     	System.out.println("saveBook - 객체 영속화!!");
     	em.persist(book);
     	// 트랜잭션이 종료될 때까지 실제로 데이터베이스에 쓰기 작업이 지연됩니다.
-    	System.out.println("Book is in persistent context but not yet committed (Lazy Write)");
+    	System.out.println("Book is in persistent context but not yet committed (Lazy Write!!!)");
         return book;
     }
 
