@@ -4,8 +4,9 @@ import jakarta.persistence.*;
 import java.util.*;
 
 @Entity
-@Table(name = "ITEM")
-public class Item {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // 고급[상속관계] 매핑 > 싱글 테이블 전략 선택
+@DiscriminatorColumn // 디폴트 name은 DTYPE
+public class Item extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ITEM_ID") // 테이블 설계 참고

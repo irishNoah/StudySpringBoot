@@ -11,23 +11,11 @@ import jakarta.persistence.Id;
 
 @Entity
 @Access(AccessType.FIELD)  // or AccessType.PROPERTY depending on your needs
-public class Book {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Book extends Item {
 
     private String title;
-    private String author;
+    private String isbn;
 
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -37,11 +25,13 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
-        return author;
-    }
+	public String getIsbn() {
+		return isbn;
+	}
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+    
 }

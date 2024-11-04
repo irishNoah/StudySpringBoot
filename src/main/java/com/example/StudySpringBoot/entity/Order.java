@@ -13,8 +13,7 @@ import jakarta.persistence.*;
 	Order 클래스에 대해 @Table(name = "ORDERS") 로 처리하는 게 좋다.
  */
 @Entity
-@Table(name = "ORDERS")
-public class Order {
+public class Order extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ORDER_ID") // 테이블 설계 참고
